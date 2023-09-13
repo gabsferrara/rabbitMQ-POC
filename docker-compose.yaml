@@ -1,0 +1,15 @@
+version: '3'
+services:
+  rabbit:
+    image: 'rabbitmq:3-management'
+    environment:
+    ##por causa do erlang
+      RABBITMQ_ERLANG_COOKIE: "SWQ0K0DSQALRPCLNMEQG"
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+    #porta liberada para a web
+      - "15672:15672"
+    #sistema se conecta nesse
+      - "5672:5672"
